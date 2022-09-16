@@ -45,13 +45,12 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/axios'
-  ],
+  modules: ['@nuxtjs/axios'],
   axios: {
-    baseURL:  process.env.BASE_URL ||
+    baseURL:
+      process.env.BASE_URL ||
       'https://nuxt-blog-8e612-default-rtdb.firebaseio.com',
-      credentials: false
+    credentials: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -61,6 +60,7 @@ export default {
     baseUrl:
       process.env.BASE_URL ||
       'https://nuxt-blog-8e612-default-rtdb.firebaseio.com',
+    apiKey: 'AIzaSyAFvUu9OiT41zl1VVUWRF27SzXKsZ3X6ek',
   },
 
   router: {
@@ -70,6 +70,7 @@ export default {
         component: resolve(__dirname, 'pages/index.vue'),
       })
     },
+    // middleware: 'log',
   },
   transition: {
     name: 'fade',
