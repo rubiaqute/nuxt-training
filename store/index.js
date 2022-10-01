@@ -117,6 +117,7 @@ const createStore = () => {
               'expirationDate',
               new Date().getTime() + result.expiresIn * 1000
             )
+            return this.$axios.$post('http://localhost:3000/api/track-data', {data: 'Authenticated'})
             // vuexContext.dispatch('setLogoutTimer', result.expiresIn * 1000)
           })
           .catch((e) => console.log(e))
@@ -141,7 +142,7 @@ const createStore = () => {
             .find((el) => el.trim().startsWith('expirationDate='))
           if (!jwtExpirationDateCookie) return
           expirationDate = jwtCookie.split('=')[1]
-        } else {
+        } else if (process.client) {
           token = localStorage.getItem('tokenNuxt')
           expirationDate = localStorage.getItem('tokenExpirationNuxt')
         }
