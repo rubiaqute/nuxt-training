@@ -1,5 +1,5 @@
 # nuxt-project
-
+## Deploy: https://rubiaqute-nuxt-course.netlify.app/
 ## Build Setup
 
 ```bash
